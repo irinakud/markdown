@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import {unmarked} from './unmarked.js';
+import Preview from './Preview.js'
+import Editor from './Editor.js'
+import React from "react"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+	constructor(props)	{
+    super(props);
+    this.state = {input: unmarked};
+	}
+
+	handleChange(event)	{
+    this.setState({input: event.target.value});
+	}
+
+	render() {
+		return (
+      <div>
+        <h2>This demo uses the markdown parser from <a href="https://cdnjs.com/libraries/marked">https://cdnjs.com/libraries/marked</a>.</h2>
+        <div class="grid-container">
+          <Editor onChange={this.handleChange.bind(this)} value={this.state.input}/>
+          <Preview value={this.state.input}/>
+        </div>
+      </div>
+    );
+	}
 }
 
 export default App;
