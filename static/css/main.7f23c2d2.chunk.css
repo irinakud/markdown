@@ -1,0 +1,2 @@
+body{font-family:Sans-Serif}.grid-container{display:grid;grid-template-columns:1fr 1fr;grid-column-gap:10px;-webkit-column-gap:10px;column-gap:10px}#editor{resize:none;width:100%;color:#96b38a;background-color:#252529}#editor,#preview{height:100%;box-sizing:border-box;overflow:auto;border:1px solid #000}img{width:20px}.title{border:1px solid #000;text-align:center;background-color:#444857;color:#fff;font:700}
+/*# sourceMappingURL=main.7f23c2d2.chunk.css.map */
